@@ -1,0 +1,39 @@
+<!Doctype html>
+
+<html xmlns:th="http://thymeleaf.org">
+
+<head th:replace="layout :: site-head">
+    <title>Spring MVC Application - Create Post</title>
+    <style>
+        *{
+            background: black;
+            color: aliceblue;
+        }
+        h1
+        {
+            color: darkred;
+            text-shadow: 0px 0px 10px darkred;
+        }
+    </style>
+</head>
+
+<header th:replace="layout :: logged-in"></header>
+
+<body>
+    <h1 style="color: brown">Create New Post</h1>
+    <form method="post" th:object="${post}" th:action="@{/posts/create}">
+        <div>Post Title:</div>
+        <div><input type="text" id="title" name="title" /></div>
+
+        <div>Description:</div>
+
+        <div><textarea rows="7" cols="100" name="body"></textarea></div>
+
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+
+</body>
+
+</html>
